@@ -70,7 +70,7 @@ public class TaskController {
         return ResponseEntity.ok(ApiResponse.success("Task updated successfully", response));
     }
 
-    @PatchMapping("/{id}/complete")
+    @PutMapping("/{id}/complete")
     public ResponseEntity<ApiResponse<TaskResponse>> markAsCompleted(
             @PathVariable Long id,
             @AuthenticationPrincipal User currentUser) {
