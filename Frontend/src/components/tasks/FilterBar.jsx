@@ -12,7 +12,7 @@ export default function FilterBar({ filters, onFilterChange }) {
         <select 
           value={filters.status || ''} 
           onChange={(e) => onFilterChange({ ...filters, status: e.target.value })}
-          className="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg shadow-sm text-sm"
+          className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm text-sm px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500/20 transition-all font-medium"
         >
           <option value="">All Statuses</option>
           <option value="TODO">To Do</option>
@@ -28,7 +28,7 @@ export default function FilterBar({ filters, onFilterChange }) {
         <select 
           value={filters.priority || ''} 
           onChange={(e) => onFilterChange({ ...filters, priority: e.target.value })}
-          className="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg shadow-sm text-sm"
+          className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm text-sm px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500/20 transition-all font-medium"
         >
           <option value="">All Priorities</option>
           <option value="LOW">Low</option>
@@ -44,7 +44,7 @@ export default function FilterBar({ filters, onFilterChange }) {
         <select 
           value={filters.sortBy || 'dueDate'} 
           onChange={(e) => onFilterChange({ ...filters, sortBy: e.target.value })}
-          className="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg shadow-sm text-sm"
+          className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm text-sm px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500/20 transition-all font-medium"
         >
           <option value="dueDate">Due Date</option>
           <option value="priority">Priority</option>
@@ -59,7 +59,7 @@ export default function FilterBar({ filters, onFilterChange }) {
         <select 
           value={filters.sortDir || 'asc'} 
           onChange={(e) => onFilterChange({ ...filters, sortDir: e.target.value })}
-          className="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg shadow-sm text-sm"
+          className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm text-sm px-3 py-2 outline-none focus:ring-2 focus:ring-primary-500/20 transition-all font-medium"
         >
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
