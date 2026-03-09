@@ -2,10 +2,18 @@
 
 import React from 'react';
 import { useAuth } from '@/context/AuthContext';
-import { LogOut, LayoutDashboard, ShieldCheck } from 'lucide-react';
+import { LogOut, LayoutDashboard, ShieldCheck, Sun, Moon } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export default function Navbar() {
   const { user, logout, isAdmin } = useAuth();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <nav className="sticky top-0 z-50 glass-panel border-b border-white/20 dark:border-slate-800 backdrop-blur-md">
@@ -41,6 +49,15 @@ export default function Navbar() {
                   <LogOut className="w-5 h-5" />
                 </button>
               </>
+            )}
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 ml-2 text-slate-500 hover:text-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 rounded-full transition-colors"
+                aria-label="Toggle Theme"
+              >
+                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
             )}
           </div>
         </div>
