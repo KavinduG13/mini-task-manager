@@ -22,7 +22,7 @@ export const tasksApi = {
   },
 
   markAsCompleted: async (id) => {
-    const response = await axiosInstance.patch(`/tasks/${id}/complete`);
+    const response = await axiosInstance.put(`/tasks/${id}/complete`);
     return response.data;
   },
 
