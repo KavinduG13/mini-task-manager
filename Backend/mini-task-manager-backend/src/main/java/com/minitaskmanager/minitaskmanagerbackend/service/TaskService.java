@@ -39,6 +39,13 @@ public class TaskService {
                 .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
 
         if (isAdmin) {
+            if (status != null && priority != null) {
+                return taskRepository.findByStatusAndPriority(status, priority, pageable).map(this::mapToResponse);
+            } else if (status != null) {
+                return taskRepository.findByStatus(status, pageable).map(this::mapToResponse);
+            } else if (priority != null) {
+                return taskRepository.findByPriority(priority, pageable).map(this::mapToResponse);
+            }
             return taskRepository.findAll(pageable).map(this::mapToResponse);
         }
 
